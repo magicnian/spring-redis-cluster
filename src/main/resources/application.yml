@@ -1,0 +1,25 @@
+server:
+  port: 8088
+
+
+logging:
+  config: classpath:log4j2.xml
+spring:
+  redis:
+    cluster:
+      nodes:
+        - 10.15.1.233:6379
+        - 10.15.1.233:6380
+        - 10.15.1.233:6381
+        - 10.15.1.233:6382
+        - 10.15.1.233:6383
+        - 10.15.1.233:6384
+      max-redirects: 5
+    jedis:
+      pool:
+        max-active: 50
+        max-wait: -1ms
+        max-idle: 10
+        min-idle: 5
+    timeout: 30000
+
